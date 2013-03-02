@@ -53,7 +53,7 @@ PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # Audio
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     alsa.msm8960 \
     audio.a2dp.default \
     audio_policy.msm8960 \
@@ -67,41 +67,30 @@ PRODUCT_PACKAGES += \
     hci_qcomm_init
 
 # Camera
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     camera.msm8960
 
 # GPS
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libloc_adapter \
-   libloc_eng \
+    libloc_eng \
     libgps.utils \
     gps.msm8960
 
 # Graphics
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     copybit.msm8960 \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
     libgenlock \
     liboverlay
-PRODUCT_PACKAGES += \
-	libgralloc \
-	libgenlock \
-	liboverlay \
-	liblights \
-	libcopybit \
-	libqdutils \
-	libhwcomposer \
-	libexternal \
-	libqservice \
-	libtilerenderer 
 
 # Lights
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     lights.msm8960
 
 # OMX
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
     libOmxCore \
@@ -134,6 +123,14 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
+# Recovery
+PRODUCT_PACKAGES += \
+    init.recovery.qcom.rc \
+    choice_fn \
+    power_test \
+    offmode_charging \
+    detect_key
+
 # GPS config
 PRODUCT_COPY_FILES += \
     device/htc/msm8960-common/configs/gps.conf:system/etc/gps.conf
@@ -152,24 +149,17 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8960-common/configs/media_profiles.xml:system/etc/media_profiles.xml \
     device/htc/msm8960-common/configs/media_codecs.xml:system/etc/media_codecs.xml
 
-# MSM8960 firmware
-PRODUCT_COPY_FILES += \
-    vendor/htc/dlx/proprietary/etc/firmware/a225p5_pm4.fw:/system/etc/firmware/a225p5_pm4.fw \
-    vendor/htc/dlx/proprietary/etc/firmware/a225_pfp.fw:/system/etc/firmware/a225_pfp.fw \
-    vendor/htc/dlx/proprietary/etc//firmware/a225_pm4.fw:/system/etc/firmware/a225_pm4.fw \
-    vendor/htc/dlx/proprietary/etc/firmware/leia_pfp_470.fw:/system/etc/firmware/leia_pfp_470.fw \
-    vendor/htc/dlx/proprietary/etc/firmware/leia_pm4_470.fw:/system/etc/firmware/leia_pm4_470.fw \
-    vendor/htc/dlx/proprietary/etc/firmware/vidc_1080p.fw:/system/etc/firmware/vidc_1080p.fw
-
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
     com.qc.hardware=true \
-    debug.composition.type= gpu \
+    dalvik.vm.heapsize=256m \
+    dalvik.vm.heapgrowthlimit=128m \
+    debug.composition.type=gpu \
     debug.enabletr=true \
     ro.hwui.renderer.disable_opaque=true \
     ro.sf.lcd_density=480 \
     debug.egl.hw=1 \
-    debug.mdpcomp.maxlayer=3 \
+    debug.mdpcomp.maxlayer=1 \
     debug.sf.buffercount=3 \
     debug.mdpcomp.logs=0 \
     debug.sf.hw=1 \
@@ -183,6 +173,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     persist.thermal.monitor=true \
     ro.baseband.arch=mdm \
+    ro.qualcomm.bt.hci_transport=smd \
     ro.opengles.version=131072 \
     ro.product.wireless=WCN3660 \
     ro.qc.sdk.audio.fluencetype=fluence \
