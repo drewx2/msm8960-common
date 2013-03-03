@@ -152,12 +152,9 @@ PRODUCT_COPY_FILES += \
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
     com.qc.hardware=true \
-    dalvik.vm.heapsize=256m \
-    dalvik.vm.heapgrowthlimit=128m \
     debug.composition.type=gpu \
     debug.enabletr=true \
     ro.hwui.renderer.disable_opaque=true \
-    ro.sf.lcd_density=480 \
     debug.egl.hw=1 \
     debug.mdpcomp.maxlayer=1 \
     debug.sf.buffercount=3 \
