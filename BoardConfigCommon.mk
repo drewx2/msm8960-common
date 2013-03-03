@@ -108,7 +108,7 @@ BOARD_RIL_CLASS := "../../../device/htc/msm8960-common/libril/"
 KERNEL_HAS_GETTIMEOFDAY_HELPER := true
 
 # Wifi
-BOARD_HAS_QCOM_WLAN := true
+#BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := bcmdhd 
 WPA_BUILD_HOSTAPD := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
