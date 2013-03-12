@@ -168,11 +168,6 @@
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct snd_enc_wma {
  __u32 super_block_align;
- __u32 bits_per_sample;
- __u32 channelmask;
- __u32 encodeopt;
- __u32 encodeopt1;
- __u32 encodeopt2;
 };
 struct snd_enc_vorbis {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */

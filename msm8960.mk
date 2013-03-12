@@ -79,11 +79,12 @@ PRODUCT_PACKAGES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
-    copybit.msm8960 \
-    gralloc.msm8960 \
-    hwcomposer.msm8960 \
     libgenlock \
-    liboverlay
+    liboverlay \
+    hwcomposer.msm8960 \
+    gralloc.msm8960 \
+    copybit.msm8960 \
+    libexternal
 
 # Lights
 PRODUCT_PACKAGES += \
